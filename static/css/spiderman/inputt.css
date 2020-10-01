@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600');
+body {
+  align-items: center;
+  background: #abbaab;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(135deg, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(135deg, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.section:nth-child(2) {
+  margin-top: 30px;
+}
+.container-input {
+  position: relative;
+}
+.text-input {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid black;
+  font-size: 20px;
+  height: 50px;
+  outline: none !important;
+  width: 280px;
+  padding-bottom: 4px;
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+.clip {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.clip-outer {
+  clip-path: ellipse(100% 350% at 0% 470%);
+  transition: clip-path 500ms 140ms;
+}
+.clip-inner {
+  clip-path: ellipse(100% 350% at 0% 470%);
+  height: calc(100% - 4px);
+  left: 2px;
+  pointer-events: none;
+  top: 2px;
+  width: calc(100% - 4px);
+}
+.clip-inner1 {
+  background: #5c2983;
+  transition: clip-path 500ms 120ms;
+}
+.clip-inner2 {
+  background: #0076c5;
+  transition: clip-path 500ms 100ms;
+}
+.clip-inner3 {
+  background: #21b372;
+  transition: clip-path 500ms 80ms;
+}
+.clip-inner4 {
+  background: #fdde02;
+  transition: clip-path 500ms 60ms;
+}
+.clip-inner5 {
+  background: #f76700;
+  transition: clip-path 500ms 40ms;
+}
+.clip-inner6 {
+  background: #d30018;
+  transition: clip-path 500ms 20ms;
+}
+.clip-inner7 {
+  background: #fff;
+  transition: clip-path 500ms;
+}
+.fill {
+  height: 100%;
+  width: 100%;
+}
+.fill1 {
+  background: #000;
+}
+.text-input:focus ~ .clip-outer,.text-input:not(:placeholder-shown) ~ .clip-outer {
+  clip-path: ellipse(100% 350% at 50% 250%);
+  transition: clip-path 500ms;
+}
+.text-input:focus ~ .clip-inner,.text-input:not(:placeholder-shown) ~ .clip-inner {
+  clip-path: ellipse(100% 350% at 50% 250%);
+}
+.text-input:focus ~ .clip-inner1,.text-input:not(:placeholder-shown) ~ .clip-inner1 {
+  transition: clip-path 500ms 20ms;
+}
+.text-input:focus ~ .clip-inner2,.text-input:not(:placeholder-shown) ~ .clip-inner2 {
+  transition: clip-path 500ms 40ms;
+}
+.text-input:focus ~ .clip-inner3,.text-input:not(:placeholder-shown) ~ .clip-inner3 {
+  transition: clip-path 500ms 60ms;
+}
+.text-input:focus ~ .clip-inner4,.text-input:not(:placeholder-shown) ~ .clip-inner4 {
+  transition: clip-path 500ms 80ms;
+}
+.text-input:focus ~ .clip-inner5,.text-input:not(:placeholder-shown) ~ .clip-inner5 {
+  transition: clip-path 500ms 100ms;
+}
+.text-input:focus ~ .clip-inner6,.text-input:not(:placeholder-shown) ~ .clip-inner6 {
+  transition: clip-path 500ms 120ms;
+}
+.text-input:focus ~ .clip-inner7,.text-input:not(:placeholder-shown) ~ .clip-inner7 {
+  transition: clip-path 500ms 140ms;
+}
+.clip-second-outer {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.clip-second-inner {
+  height: calc(100% - 4px);
+  left: 2px;
+  overflow: hidden;
+  position: absolute;
+  top: 2px;
+  width: calc(100% - 4px);
+}
+.fill-second {
+  transform: translateY(41px);
+  transition: transform 300ms;
+}
+.fill-second-zigzag {
+  background-repeat: repeat-x;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 32px;
+}
+.fill-second-zigzag1 {
+  background: linear-gradient(-45deg, #000 16px, transparent 0), linear-gradient(45deg, #000 16px, transparent 0);
+  background-position: 5px 0;
+  background-repeat: repeat-x;
+  background-size: 32px 32px;
+}
+.fill-second-rect1 {
+  background: #000;
+  height: 50px;
+  width: 100%;
+}
+.fill-second-zigzag2 {
+  background: linear-gradient(-45deg, #FF1EAD 16px, transparent 0), linear-gradient(45deg, #FF1EAD 16px, transparent 0);
+  background-position: 3px 3px;
+  background-repeat: repeat-x;
+  background-size: 32px 32px;
+}
+.fill-second-rect2 {
+  background: #FF1EAD;
+  height: 50px;
+  width: 100%;
+}
+.fill-second-zigzag3 {
+  background: linear-gradient(-45deg, #fff 16px, transparent 0), linear-gradient(45deg, #fff 16px, transparent 0);
+  background-position: 3px 7px;
+  background-repeat: repeat-x;
+  background-size: 32px 32px;
+}
+.fill-second-rect3 {
+  background: #fff;
+  height: 50px;
+  width: 100%;
+}
+.text-input:focus ~ .clip-second-outer .fill-second,.text-input:not(:placeholder-shown) ~ .clip-second-outer .fill-second {
+  transform: translateY(-32px);
+}
+.text-input:focus ~ .clip-second-inner .fill-second,.text-input:not(:placeholder-shown) ~ .clip-second-inner .fill-second {
+  transform: translateY(-32px);
+}
+
+.pass-order ul, li{
+  list-style: none;
+}
+.pass-order{
+  margin: auto;
+  float: right;
+  text-align: center;
+  position: relative;
+  top: 100px;
+  right: 20px;
+}
+.pass-order .li-title{
+  margin-bottom: 10px;
+  border-bottom: #86867f solid 2px;
+}
+

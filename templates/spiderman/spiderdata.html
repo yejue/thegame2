@@ -1,0 +1,149 @@
+{% load static %}
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/spiderman/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spiderman/demo_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spiderman/demo2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/spiderman/default.css' %}">
+    <script src="{% static 'js/spiderman/vendor/modernizr-2.6.2.min.js' %}"></script>
+    <!--[if IE]>
+		<script src="http://libs.baidu.com/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+    <link rel="stylesheet" href="{% static 'css/spiderman/zhuangbicard/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spiderman/zhuangbicard/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spiderman/zhuangbicard/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/spiderman/zhuangbicard/style.css' %}">
+</head>
+
+<style>
+    @font-face {
+        font-family: 'Arial g';
+        src: url("{% static 'fonts/arial.ttf' %}");
+    }
+    .codeme-box{
+    width: 297px;
+    height: 333px;
+    background: #ffffff;
+    margin: auto;
+}
+.codeme-title{
+    background: #fbf69a;
+    height: 90px;
+    box-shadow: 0 1px 3px black;
+    display: flex;
+    color: #000;
+}
+.codeme-title .codeme-img{
+    text-align: right;
+    height: 100%;
+}
+.codeme-title .codeme-img img{
+    height: 100%;
+}
+.codeme-title .codeme-item{
+    text-align: left;
+    height: 30px;
+}
+.codeme-title .codeme-item img{
+    position: relative;
+    height: 100%;
+    left: 5px;
+}
+
+.codeme-contain{
+    height: 243px;
+}
+
+</style>
+<body class="dm-demo2">
+<div class="htmleaf-container">
+
+    <nav class="nav clearfix">
+        <button class="nav-el" id="el-topleft" data-id="ov-topleft"></button>
+        <button class="nav-el" id="el-topright" data-id="ov-topright"></button>
+        <button class="nav-el" id="el-btmleft" data-id="ov-btmleft"></button>
+        <button class="nav-el" id="el-btmright" data-id="ov-btmright"></button>
+    </nav>
+
+    <section class="overlay" id="ov-topleft">
+        <div class="wrap">
+            <div class="slide-container">
+
+            </div>
+        </div>
+                <button class="close"><span class="mfg-cancel"></span></button>
+
+    </section>
+    <section class="overlay" id="ov-topright">
+        <div class="wrap">
+            <code>
+                这个是凑数的
+            </code>
+        </div>
+        <button class="close"><span class="mfg-cancel"></span></button>
+    </section>
+    <section class="overlay" id="ov-btmleft">
+        <div class="wrap">
+            <div class="codeme-box">
+                <div class="codeme-contain">
+
+                </div>
+                <div class="codeme-title">
+                    <div class="codeme-item">
+                        <img src="{% static 'imgs/csdn.png' %}" alt="">
+                        <a href="https://blog.csdn.net/qq_39177678" style="color: #5731ff">庸了个白:</a>
+                        <a href="https://blog.csdn.net/qq_39177678">
+                            <label for="codeme-item" style="text-align: left;color: #676262;font-family: 'Arial g'">
+                        一个在Python领域苟且偷生一年半的小白, 姑且成长成大白(●—●)了
+                    </label>
+                        </a>
+
+                    </div>
+
+                    <div class="codeme-img">
+                        <img src="{% static 'imgs/ylgbt.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="close"><span class="mfg-cancel"></span></button>
+    </section>
+    <section class="overlay" id="ov-btmright">
+        <div class="wrap">
+            <a href="{% url 'spider:answer' %}"> <button>点这里</button></a>
+        </div>
+        <button class="close"><span class="mfg-cancel"></span></button>
+    </section>
+</div>
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/spiderman/slick.min.js' %}"></script>
+<script src="{% static 'js/spiderman/plugins.js' %}"></script>
+<script src="{% static 'js/spiderman/demo.js' %}"></script>
+<script src="{% static 'js/spiderman/spiderdata.js' %}"></script>
+
+
+<script type="text/javascript">
+    setInterval(function(){debugger}, 1000);
+    (function (){
+        console.log("也许你已经发现了，" +
+            "当你加载完数据的时候将会跳回第5页，不要慌张，" +
+            "设定就是这么干的，我并不建议手动完成爬虫的工作，" +
+            "当然如果你有足够耐心，我也不介意");
+
+        var slideContainer = $('.slide-container');
+
+        slideContainer.slick({
+        });
+
+    })();
+
+</script>
+
+
+</body>
+</html>

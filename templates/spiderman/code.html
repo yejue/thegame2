@@ -1,0 +1,69 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>没有标题</title>
+
+
+    <link rel="stylesheet" href="{% static 'css/spiderman/inputt.css' %}">
+
+
+</head>
+
+<body>
+{% if msg %}
+    <script>alert({{ msg }})</script>
+{% endif %}
+
+<div class="container">
+    <form action="{% url 'spider:answer' %}" method="post">
+        {% csrf_token %}
+        <div class="section">
+            <div class="container-input">
+                <input class="text-input" type="text" placeholder=" " name="answer">
+                <div class="clip-outer clip">
+                    <div class="fill1 fill"></div>
+                </div>
+                <div class="clip-inner1 clip-inner clip">
+                    <div class="fill"></div>
+                </div>
+                <div class="clip-inner2 clip-inner clip">
+                    <div class="fill"></div>
+                </div>
+                <div class="clip-inner3 clip-inner clip">
+                    <div class="fill"></div>
+                </div>
+                <div class="clip-inner4 clip-inner clip">
+                    <div class="fill"></div>
+                </div>
+                <div class="clip-inner5 clip-inner clip">
+                    <div class="fill"></div>
+                </div>
+                <div class="clip-inner6 clip-inner clip">
+                    <div class="fill"></div>
+                </div>
+                <div class="clip-inner7 clip-inner clip">
+                    <div class="fill"></div>
+                </div>
+            </div>
+        </div>
+        <input type="submit" placeholder="点一下">
+
+    </form>
+<div class="pass-order">
+    <ul>
+        <li class="li-title">当前排行 / 通关时间</li>
+        {% for item in ps %}
+            <li>{{ item.user.username }} &emsp;&emsp;{{ item.arrive_date }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+</div>
+
+</body>
+
+</html>

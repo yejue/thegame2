@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <title>{% block title %}thegame{% endblock %}</title>
+    {% block links %}
+
+    {% endblock %}
+</head>
+<body>
+
+{% block container %}
+
+{% endblock %}
+
+
+<script src="{% static 'js/common.js' %}"></script>
+<script src="{% static 'js/message.js' %}"></script>
+<script>
+    setInterval(function(){debugger}, 1000);
+</script>
+{% block script %}
+
+{% endblock %}
+</body>
+</html>

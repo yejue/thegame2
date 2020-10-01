@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+希望你不要后悔自己的决定
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{% static 'css/thecode/thecode.css' %}">
+{% endblock %}
+
+{% block container %}
+    <form action="#" method="post">
+    {% csrf_token %}
+            <div>
+            <h3>希望你不要后悔自己的决定</h3>
+            <ul>
+                <li>
+                    <span><input type="text" name="nickname" placeholder="昵称" id="nickname"></span>
+                <li>
+                    <span><input type="password" name="password" placeholder="密码" id="pwd"></span>
+                </li>
+                <li>
+                    <span><input type="password" name="password_repeat" placeholder="重复" id="pwd-repeat"></span>
+                </li>
+                <li>
+                    <span><input type="text" name="email" placeholder="邮箱" id="email"></span>
+                </li>
+                <li>
+                    <span><input type="text" name="image_code" placeholder="图形验证码" id="image_code"></span>
+                    <span><img src="{% url 'veri:image_code' %}" alt="应该卡了" id="piccode"></span>
+                </li>
+                <li>
+                    <span><input type="text" name="mailcode" placeholder="邮箱验证码"></span>
+                    <span><button class="getmailcode">获取邮箱验证码</button></span>
+                </li>
+
+                <li>
+                    <span><input type="submit" value="yepgo"></span>
+                </li>
+            </ul>
+        </div>
+    </form>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/thecode/register.js' %}"></script>
+{% endblock %}
+
